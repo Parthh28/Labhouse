@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Clients - Lab House Calibration</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex flex-col w-full overflow-x-hidden">
+        <!-- Top Navigation -->
+        <header
+            class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-6 lg:px-20 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary p-1.5 rounded-lg text-white">
+                        <span class="material-symbols-outlined block">biotech</span>
+                    </div>
+                    <h1 class="text-xl font-bold tracking-tight">Labhouse</h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About Us</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="search.html">Services</a>
+                    <a class="text-sm font-medium text-primary" href="reviews.html">Clients</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+                </nav>
+                <button
+                    class="quote-btn bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hidden md:block">
+                    Get a Quote
+                </button>
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+        </header>
+        <main class="max-w-7xl mx-auto px-6 lg:px-20 py-12">
+            <!-- Hero Section -->
+            <div class="mb-16">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+                    <div class="max-w-2xl">
+                        <span class="text-primary font-bold tracking-widest uppercase text-xs">Trust &amp;
+                            Reliability</span>
+                        <h2 class="text-5xl font-bold mt-4 mb-6 leading-[1.1]">Our Esteemed Clients</h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg">See why leading laboratories,
+                            pharmaceutical companies, and research facilities trust Lab House for their precision
+                            calibration needs and equipment maintenance.</p>
+                    </div>
+                </div>
+                <!-- Aggregate Stats (Removed) -->
+            </div>
+            <!-- Trusted Partners / Logos (Removed / Replaced by Client Grid) -->
+
+            <!-- Client Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Ipca Laboratories Ltd</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Shiv-Vani Oil & Gas Exploration Services Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Allegro Pharmachem</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Aurobindo Pharmaceutical Research Center</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Ajas component (PamGroup)</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Calyx Chemical And Pharmaceutical Limited</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Creek Insulation Chemical Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Classic Stripes Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Dabur Pharmaceutical Limited</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Dales Laboratories Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Dales Remedies Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Eastern Petroleum Pvt. Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Fresenius Kabi Oncology Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Gaylord Pharma system Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Godrej and boyce Mfg. Co. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Hemmo Pharmaceuticals Pvt. Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Indoco Remedies Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Ind-Swift Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Kanjur Naturals</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Kleanzaids contamination cont. Pvt. Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    K. M. Enterprises</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Kalisma Steel Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    L’oreal India Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Lyka Labs Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Mahindra and Mahindra Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Raptakos, Brett & Co. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Makers Laboratories Limited</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Mac-Chem products (I) Pvt. Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Pratibha Ind. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Rajhans Vegetable oil Refinery Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Refrigerated Distributors Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    REMI Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Saksham Technologies Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Sky lab Instruments and Engineers Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Siyaram Silk Mills Limited</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Siro Clinpharm Pvt. Ltd.</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Suyog Engineers Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    The Paper Product Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Africure Pharmaceuticals India Pvt. Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Unimed India</div>
+
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Huhtamaki PPL Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    IVP Limited</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Fine Organic Indutries Ltd.</div>
+                <div
+                    class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200 hover:border-primary transition-colors hover:shadow-md cursor-default min-h-[100px]">
+                    Western Railway</div>
+            </div>
+            <!-- CTA Section -->
+            <div class="mt-24 bg-primary rounded-3xl p-12 lg:p-16 relative overflow-hidden text-white text-center">
+                <div
+                    class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-background-dark/20 rounded-full blur-2xl">
+                </div>
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h2 class="text-4xl font-bold mb-6">Join 500+ satisfied laboratory partners</h2>
+                    <p class="text-primary-foreground/80 text-lg mb-10">Experience the gold standard in precision
+                        calibration and asset management.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button
+                            class="quote-btn bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-colors shadow-xl text-center">
+                            Get Your Free Quote
+                        </button>
+                        <button
+                            class="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors">
+                            Talk to an Expert
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-20">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary p-1 rounded text-white">
+                        <span class="material-symbols-outlined block text-sm">biotech</span>
+                    </div>
+                    <span class="text-lg font-bold tracking-tight">Lab House</span>
+                </div>
+                <div class="flex gap-8 text-slate-500 text-sm">
+                    <a class="hover:text-primary" href="about.html">About Us</a>
+                    <a class="hover:text-primary" href="reviews.html">Clients</a>
+                    <a class="hover:text-primary" href="contact.html">Contact</a>
+                </div>
+                <p class="text-slate-400 text-sm">© <span id="currentYear2"></span> Lab House Calibration Services. All
+                    rights reserved.</p>
+                <script>
+                    document.getElementById('currentYear2').textContent = new Date().getFullYear();
+                </script>
+            </div>
+        </footer>
+    </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="hidden fixed inset-0 z-[100] bg-white dark:bg-slate-900 flex-col items-center justify-center space-y-8 text-2xl font-bold">
+        <button id="close-menu-btn"
+            class="absolute top-6 right-6 p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+        <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
+        <a class="hover:text-primary transition-colors" href="search.html">Services</a>
+        <a class="hover:text-primary transition-colors" href="reviews.html">Clients</a>
+        <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+        <button
+            class="quote-btn mt-8 bg-primary text-white px-10 py-4 rounded-xl text-xl shadow-lg shadow-primary/20">Get a
+            Quote</button>
+    </div>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal"
+        class="hidden fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden relative"
+            onclick="event.stopPropagation()">
+            <!-- Modal Header -->
+            <div
+                class="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-800/50">
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Request a Quote</h3>
+                <button id="close-quote-btn" class="text-slate-400 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6">
+                <!-- Success Message -->
+                <div id="quote-success-message" class="hidden flex-col items-center text-center py-8">
+                    <div
+                        class="size-16 bg-green-100 dark:bg-green-900/30 text-green-600 rounded-full flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-4xl">check_circle</span>
+                    </div>
+                    <h4 class="text-xl font-bold mb-2">Quote Request Sent!</h4>
+                    <p class="text-slate-500 dark:text-slate-400">Our team will review your requirements and respond
+                        within 24 hours.</p>
+                </div>
+
+                <!-- Quote Form -->
+                <form id="quote-form" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <label class="flex flex-col gap-1.5">
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">First Name</span>
+                            <input name="firstName" required type="text" placeholder="Jane"
+                                class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-sm h-11 px-4">
+                        </label>
+                        <label class="flex flex-col gap-1.5">
+                            <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Last Name</span>
+                            <input name="lastName" required type="text" placeholder="Doe"
+                                class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-sm h-11 px-4">
+                        </label>
+                    </div>
+
+                    <label class="flex flex-col gap-1.5">
+                        <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Work Email</span>
+                        <input name="email" required type="email" placeholder="jane@company.com"
+                            class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-sm h-11 px-4">
+                    </label>
+
+                    <label class="flex flex-col gap-1.5">
+                        <span class="text-sm font-medium text-slate-700 dark:text-slate-300">Equipment Type</span>
+                        <select name="equipmentType"
+                            class="w-full rounded-lg border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary text-sm h-11 px-4 text-slate-600">
+                            <option value="Pressure Instruments">Pressure Instruments</option>
+                            <option value="Temperature Sensors">Temperature Sensors</option>
+                            <option value="Mechanical Scales">Mechanical Scales</option>
+                            <option value="Electrical Meters">Electrical Meters</option>
+                            <option value="Other">Other / Unsure</option>
+                        </select>
+                    </label>
+
+                    <button type="submit"
+                        class="w-full mt-2 bg-primary hover:bg-primary/90 text-white font-bold h-12 rounded-lg transition-colors shadow-lg shadow-primary/20">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
