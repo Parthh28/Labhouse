@@ -14,6 +14,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="pill-nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -60,27 +62,87 @@
                 <h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">Labhouse
                 </h2>
             </div>
-            <div class="flex flex-1 justify-end gap-8">
-                <nav class="hidden md:flex items-center gap-9">
-                    <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
-                        href="index.html">Home</a>
-                    <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
-                        href="about.html">About Us</a>
-                    <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
-                        href="search.html">Services</a>
-                    <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors"
-                        href="reviews.html">Reviews</a>
-                    <a class="text-primary text-sm font-bold" href="contact.html">Contact</a>
+            <div class="pill-nav-container">
+                <nav class="pill-nav" aria-label="Primary">
+                    <a class="pill-logo" href="index.html" aria-label="Home">
+                        <span class="material-symbols-outlined">biotech</span>
+                    </a>
+
+                    <div class="pill-nav-items desktop-only">
+                        <ul class="pill-list" role="menubar">
+                            <li role="none">
+                                <a role="menuitem" href="index.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Home</span>
+                                        <span class="pill-label-hover">Home</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="about.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">About Us</span>
+                                        <span class="pill-label-hover">About Us</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="search.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Services</span>
+                                        <span class="pill-label-hover">Services</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="reviews.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Reviews</span>
+                                        <span class="pill-label-hover">Reviews</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="contact.html" class="pill is-active">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Contact</span>
+                                        <span class="pill-label-hover">Contact</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <button role="menuitem" class="pill quote-btn">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Get Quote</span>
+                                        <span class="pill-label-hover">Get Quote</span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                 </nav>
-                <button
-                    class="quote-btn md:flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all hidden">
-                    Get a Quote
-                </button>
-                <!-- Hamburger Menu Icon for Mobile -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+
+                <div class="mobile-menu-popover mobile-only">
+                    <ul class="mobile-menu-list">
+                        <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-menu-link">About Us</a></li>
+                        <li><a href="search.html" class="mobile-menu-link">Services</a></li>
+                        <li><a href="reviews.html" class="mobile-menu-link">Reviews</a></li>
+                        <li><a href="contact.html" class="mobile-menu-link is-active">Contact</a></li>
+                        <li><button class="mobile-menu-link w-full text-left quote-btn">Get a Quote</button></li>
+                    </ul>
+                </div>
             </div>
         </header>
         <!-- Hero Section -->
@@ -122,50 +184,54 @@
                     </div>
                     <!-- End Success Message -->
 
-                    <form id="contact-form" class="flex flex-col gap-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <label class="flex flex-col gap-2">
-                                <span class="text-sm font-medium">First Name</span>
-                                <input name="firstName"
-                                    class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4"
-                                    placeholder="John" type="text" required />
-                            </label>
-                            <label class="flex flex-col gap-2">
-                                <span class="text-sm font-medium">Last Name</span>
-                                <input name="lastName"
-                                    class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4"
-                                    placeholder="Doe" type="text" required />
-                            </label>
+                    <div class="bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+                        <div>
+                            <form id="contact-form" class="flex flex-col gap-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <label class="flex flex-col gap-2">
+                                        <span class="text-sm font-medium">First Name</span>
+                                        <input name="firstName"
+                                            class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4"
+                                            placeholder="John" type="text" required />
+                                    </label>
+                                    <label class="flex flex-col gap-2">
+                                        <span class="text-sm font-medium">Last Name</span>
+                                        <input name="lastName"
+                                            class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4"
+                                            placeholder="Doe" type="text" required />
+                                    </label>
+                                </div>
+                                <label class="flex flex-col gap-2">
+                                    <span class="text-sm font-medium">Email</span>
+                                    <input name="email"
+                                        class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4"
+                                        placeholder="john@company.com" type="email" required />
+                                </label>
+                                <label class="flex flex-col gap-2">
+                                    <span class="text-sm font-medium">Service Inquiry</span>
+                                    <select name="inquiryType"
+                                        class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4 text-slate-600">
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Calibration Services">Calibration Services</option>
+                                        <option value="Thermal Validation">Thermal Validation (Mapping)</option>
+                                        <option value="HVAC Validation">HVAC Validation</option>
+                                        <option value="Certification Request">Certification Request</option>
+                                    </select>
+                                </label>
+                                <label class="flex flex-col gap-2">
+                                    <span class="text-sm font-medium">Message</span>
+                                    <textarea name="message" required
+                                        class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary p-4 resize-none"
+                                        placeholder="Tell us how we can help..." rows="5"></textarea>
+                                </label>
+                                <button
+                                    class="bg-primary text-white font-bold py-4 rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
+                                    type="submit">
+                                    Send Message
+                                </button>
+                            </form>
                         </div>
-                        <label class="flex flex-col gap-2">
-                            <span class="text-sm font-medium">Work Email</span>
-                            <input name="email"
-                                class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4"
-                                placeholder="john@company.com" type="email" required />
-                        </label>
-                        <label class="flex flex-col gap-2">
-                            <span class="text-sm font-medium">Service Inquiry</span>
-                            <select name="inquiryType"
-                                class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary h-12 px-4">
-                                <option value="General Inquiry">General Inquiry</option>
-                                <option value="Instrument Calibration">Instrument Calibration</option>
-                                <option value="Repair Services">Repair Services</option>
-                                <option value="On-site Maintenance">On-site Maintenance</option>
-                                <option value="Certification Request">Certification Request</option>
-                            </select>
-                        </label>
-                        <label class="flex flex-col gap-2">
-                            <span class="text-sm font-medium">Message</span>
-                            <textarea name="message" required
-                                class="rounded-lg border-primary/20 bg-white dark:bg-slate-800/50 focus:border-primary focus:ring-1 focus:ring-primary p-4 resize-none"
-                                placeholder="Tell us how we can help..." rows="5"></textarea>
-                        </label>
-                        <button
-                            class="bg-primary text-white font-bold py-4 rounded-lg hover:bg-primary/90 transition-all shadow-lg shadow-primary/20"
-                            type="submit">
-                            Send Message
-                        </button>
-                    </form>
+                    </div>
                 </div>
                 <!-- Right: Information & Map -->
                 <div class="flex flex-col gap-10">
@@ -174,14 +240,16 @@
                             <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
                             <h3 class="font-bold text-lg">Our Laboratory</h3>
                             <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-                                123 Precision Way, Science Park,<br />New York, NY 10001
+                                <a href="https://www.google.com/maps/place/Lab+House/@19.3856474,72.8307208,17z/data=!3m1!4b1!4m6!3m5!1s0x3be7aec16713a5cb:0x4d130c6883bc3d1f!8m2!3d19.3856474!4d72.8332957!16s%2Fg%2F1pt_w3xzz?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                                    Tirupati Trade Center, 205, Navghar Vasai East, Vasai East, Maharashtra 401202,<br />Vasai East, Maharashtra 401202
+                                </a>
                             </p>
                         </div>
                         <div class="flex flex-col gap-3 p-6 rounded-xl bg-primary/5 border border-primary/10">
                             <span class="material-symbols-outlined text-primary text-3xl">call</span>
                             <h3 class="font-bold text-lg">Phone &amp; Support</h3>
                             <p class="text-slate-600 dark:text-slate-400 text-sm">
-                                +1 (555) 012-3456<br />
+                                <a href="tel:+919326050186" class="hover:text-primary transition-colors">+91 9326050186</a><br />
                                 Mon-Fri: 9am - 6pm
                             </p>
                         </div>
@@ -189,8 +257,7 @@
                             <span class="material-symbols-outlined text-primary text-3xl">mail</span>
                             <h3 class="font-bold text-lg">Email Us</h3>
                             <p class="text-slate-600 dark:text-slate-400 text-sm">
-                                support@labhouse.com<br />
-                                sales@labhouse.com
+                                <a href="mailto:contact@labhouse.net" class="hover:text-primary transition-colors">contact@labhouse.net</a>
                             </p>
                         </div>
                         <div class="flex flex-col gap-3 p-6 rounded-xl bg-primary/5 border border-primary/10">
@@ -224,21 +291,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Embedded Map Placeholder -->
+                    <!-- Embedded Map -->
                     <div
                         class="rounded-xl overflow-hidden border border-primary/10 h-full min-h-[300px] relative group">
-                        <div class="absolute inset-0 bg-slate-200 dark:bg-slate-800 flex items-center justify-center bg-cover bg-center"
-                            data-alt="Interactive map showing lab location in New York City"
-                            data-location="New York, NY"
-                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCYHdwclcniNGH3BZOqNESxMeTTDuGMFyJvCgbAufE7k2IMeV8eE9J8iD3Jg3QN_WjIhZuZUXT2rIK-iuOIVx7lCdGaHYlZKZOYqwCSJYphSbhQCeKFQsvSx-y1LkGvegAtR47gKexRLvoMzXGprv3tZN6Pl6FOh64DHnm2kPhRI60p3I5p0NCLBq4jmYLnwb4IbxsBYSIAmwDM_r-0WYp5Uiikswg83-yms3RA2JFCNUfnqIUa0nTvpYqfPx4prOOVUE-NVDX0XvjM");'>
-                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors">
-                            </div>
-                            <div
-                                class="relative bg-white dark:bg-slate-900 px-6 py-3 rounded-full shadow-2xl flex items-center gap-2">
-                                <span class="material-symbols-outlined text-primary">location_on</span>
-                                <span class="font-bold">Labhouse Headquarters</span>
-                            </div>
-                        </div>
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Agarwal+Industrial+Estate,Navghar,Vasai+East,Maharashtra&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; position: absolute; inset: 0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -264,7 +328,7 @@
                     <h4 class="text-white font-bold">Quick Links</h4>
                     <nav class="flex flex-col gap-2 text-sm">
                         <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-                        <a class="hover:text-primary transition-colors" href="reviews.html">Reviews</a>
+                        <a class="hover:text-primary transition-colors" href="reviews.html">Clients</a>
                         <a class="hover:text-primary transition-colors" href="search.html">Services</a>
                     </nav>
                 </div>
@@ -282,25 +346,12 @@
                 </div>
             </div>
             <div class="border-t border-slate-800 mt-12 pt-8 text-center text-xs">
-                © 2024 Labhouse Precision Calibration Inc. All rights reserved.
+                © <span id="currentYear3"></span> Lab House Calibration Services. All rights reserved.
             </div>
+            <script>
+                document.getElementById('currentYear3').textContent = new Date().getFullYear();
+            </script>
         </footer>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="hidden fixed inset-0 z-[100] bg-white dark:bg-slate-900 flex-col items-center justify-center space-y-8 text-2xl font-bold">
-            <button id="close-menu-btn"
-                class="absolute top-6 right-6 p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
-            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-            <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-            <a class="hover:text-primary transition-colors" href="search.html">Services</a>
-            <a class="hover:text-primary transition-colors" href="reviews.html">Reviews</a>
-            <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-            <button
-                class="quote-btn mt-8 bg-primary text-white px-10 py-4 rounded-xl text-xl shadow-lg shadow-primary/20">Get
-                a Quote</button>
-        </div>
 
         <!-- Quote Modal -->
         <div id="quote-modal"

@@ -5,13 +5,15 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Client Reviews - Labhouse Calibration</title>
+    <title>Our Clients - Lab House Calibration</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="pill-nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
@@ -43,319 +45,242 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
     <div class="relative flex flex-col w-full overflow-x-hidden">
         <!-- Top Navigation -->
-        <header
-            class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-6 lg:px-20 py-4">
-            <div class="max-w-7xl mx-auto flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="bg-primary p-1.5 rounded-lg text-white">
-                        <span class="material-symbols-outlined block">biotech</span>
-                    </div>
-                    <h1 class="text-xl font-bold tracking-tight">Labhouse</h1>
+        <div class="pill-nav-container">
+            <nav class="pill-nav" aria-label="Primary">
+                <a class="pill-logo" href="index.html" aria-label="Home">
+                    <span class="material-symbols-outlined">biotech</span>
+                </a>
+
+                <div class="pill-nav-items desktop-only">
+                    <ul class="pill-list" role="menubar">
+                        <li role="none">
+                            <a role="menuitem" href="index.html" class="pill">
+                                <span class="hover-circle"></span>
+                                <span class="label-stack">
+                                    <span class="pill-label">Home</span>
+                                    <span class="pill-label-hover">Home</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a role="menuitem" href="about.html" class="pill">
+                                <span class="hover-circle"></span>
+                                <span class="label-stack">
+                                    <span class="pill-label">About Us</span>
+                                    <span class="pill-label-hover">About Us</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a role="menuitem" href="search.html" class="pill">
+                                <span class="hover-circle"></span>
+                                <span class="label-stack">
+                                    <span class="pill-label">Services</span>
+                                    <span class="pill-label-hover">Services</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a role="menuitem" href="reviews.html" class="pill is-active">
+                                <span class="hover-circle"></span>
+                                <span class="label-stack">
+                                    <span class="pill-label">Reviews</span>
+                                    <span class="pill-label-hover">Reviews</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a role="menuitem" href="contact.html" class="pill">
+                                <span class="hover-circle"></span>
+                                <span class="label-stack">
+                                    <span class="pill-label">Contact</span>
+                                    <span class="pill-label-hover">Contact</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li role="none">
+                            <button role="menuitem" class="pill quote-btn">
+                                <span class="hover-circle"></span>
+                                <span class="label-stack">
+                                    <span class="pill-label">Get Quote</span>
+                                    <span class="pill-label-hover">Get Quote</span>
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-                <nav class="hidden md:flex items-center gap-10">
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About Us</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="search.html">Services</a>
-                    <a class="text-sm font-medium text-primary" href="reviews.html">Reviews</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
-                </nav>
-                <button
-                    class="quote-btn bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hidden md:block">
-                    Get a Quote
+
+                <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
                 </button>
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+            </nav>
+
+            <div class="mobile-menu-popover mobile-only">
+                <ul class="mobile-menu-list">
+                    <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                    <li><a href="about.html" class="mobile-menu-link">About Us</a></li>
+                    <li><a href="search.html" class="mobile-menu-link">Services</a></li>
+                    <li><a href="reviews.html" class="mobile-menu-link is-active">Reviews</a></li>
+                    <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                    <li><button class="mobile-menu-link w-full text-left quote-btn">Get a Quote</button></li>
+                </ul>
             </div>
-        </header>
+        </div>
         <main class="max-w-7xl mx-auto px-6 lg:px-20 py-12">
             <!-- Hero Section -->
-            <div class="mb-16">
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+            <div class="mb-12">
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-8">
                     <div class="max-w-2xl">
-                        <span class="text-primary font-bold tracking-widest uppercase text-xs">Trust &amp;
-                            Reliability</span>
-                        <h2 class="text-5xl font-bold mt-4 mb-6 leading-[1.1]">Client Reviews &amp; Testimonials</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-lg">See why over 500 leading laboratories and
-                            research facilities trust Labhouse for their precision calibration needs and equipment
-                            maintenance.</p>
+                        <span class="text-primary font-bold tracking-widest uppercase text-xs">Trust & Reliability</span>
+                        <h2 class="text-5xl font-bold mt-4 mb-6 leading-[1.1]">Our Esteemed Clients</h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg">Leading laboratories and industries trust Lab House for precision calibration and technical validation.</p>
                     </div>
                 </div>
-                <!-- Aggregate Stats -->
-                <div
-                    class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                    <div
-                        class="lg:col-span-4 flex flex-col items-center justify-center text-center lg:border-r border-slate-200 dark:border-slate-800 pr-0 lg:pr-12">
-                        <div class="text-6xl font-black text-primary mb-2">4.9</div>
-                        <div class="flex gap-1 text-yellow-400 mb-4">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1">star</span>
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1">star_half</span>
-                        </div>
-                        <p class="text-slate-500 text-sm font-medium">Based on 128 Verified Client Reviews</p>
-                    </div>
-                    <div class="lg:col-span-5 flex flex-col justify-center gap-3">
-                        <div class="grid grid-cols-[20px_1fr_40px] items-center gap-x-4">
-                            <span class="text-sm font-semibold">5</span>
-                            <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                                <div class="h-full bg-primary rounded-full" style="width: 90%;"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 text-right">90%</span>
-                            <span class="text-sm font-semibold">4</span>
-                            <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                                <div class="h-full bg-primary rounded-full" style="width: 7%;"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 text-right">7%</span>
-                            <span class="text-sm font-semibold">3</span>
-                            <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                                <div class="h-full bg-primary rounded-full" style="width: 2%;"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 text-right">2%</span>
-                            <span class="text-sm font-semibold">2</span>
-                            <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                                <div class="h-full bg-primary rounded-full" style="width: 1%;"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 text-right">1%</span>
-                            <span class="text-sm font-semibold">1</span>
-                            <div class="h-2 rounded-full bg-slate-100 dark:bg-slate-800">
-                                <div class="h-full bg-primary rounded-full" style="width: 0%;"></div>
-                            </div>
-                            <span class="text-xs text-slate-500 text-right">0%</span>
-                        </div>
-                    </div>
-                    <div
-                        class="lg:col-span-3 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-                        <p class="text-slate-700 dark:text-slate-300 font-medium mb-4">Are you a client?</p>
-                        <button
-                            class="w-full flex items-center justify-center gap-2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 py-3 rounded-lg font-bold hover:opacity-90 transition-all">
-                            <span class="material-symbols-outlined text-sm">rate_review</span>
-                            Leave a Review
-                        </button>
-                    </div>
+
+                <!-- Categories Filter -->
+                <div class="flex flex-wrap gap-3 mb-8" id="client-filters">
+                    <button data-filter="all" class="filter-btn active px-6 py-2 rounded-full border border-primary bg-primary text-white font-bold transition-all hover:shadow-lg">All</button>
+                    <button data-filter="pharma" class="filter-btn px-6 py-2 rounded-full border border-slate-200 dark:border-slate-800 hover:border-primary hover:text-primary transition-all font-medium">Pharmaceutical</button>
+                    <button data-filter="oilgas" class="filter-btn px-6 py-2 rounded-full border border-slate-200 dark:border-slate-800 hover:border-primary hover:text-primary transition-all font-medium">Oil & Gas</button>
+                    <button data-filter="industrial" class="filter-btn px-6 py-2 rounded-full border border-slate-200 dark:border-slate-800 hover:border-primary hover:text-primary transition-all font-medium">Industrial</button>
+                    <button data-filter="other" class="filter-btn px-6 py-2 rounded-full border border-slate-200 dark:border-slate-800 hover:border-primary hover:text-primary transition-all font-medium">Other</button>
                 </div>
             </div>
-            <!-- Trusted Partners / Logos -->
-            <div class="mb-20">
-                <p class="text-center text-slate-500 text-sm font-bold tracking-widest uppercase mb-10">Trusted by
-                    Global Leaders</p>
-                <div
-                    class="flex flex-wrap justify-center items-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                    <div class="h-10 w-32 bg-slate-400/20 rounded-md flex items-center justify-center text-slate-400 font-black text-xl italic"
-                        data-alt="Abstract brand logo of a pharmaceutical company">BIO-PHARMA</div>
-                    <div class="h-10 w-32 bg-slate-400/20 rounded-md flex items-center justify-center text-slate-400 font-black text-xl"
-                        data-alt="Abstract brand logo of a research university">UNITEC</div>
-                    <div class="h-10 w-32 bg-slate-400/20 rounded-md flex items-center justify-center text-slate-400 font-black text-xl"
-                        data-alt="Abstract brand logo of a global laboratory">GLOBELAB</div>
-                    <div class="h-10 w-32 bg-slate-400/20 rounded-md flex items-center justify-center text-slate-400 font-black text-xl italic"
-                        data-alt="Abstract brand logo of a health system">HEALTHSYS</div>
-                    <div class="h-10 w-32 bg-slate-400/20 rounded-md flex items-center justify-center text-slate-400 font-black text-xl"
-                        data-alt="Abstract brand logo of a chemical company">CORE-CHEM</div>
+
+            <!-- Client Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="client-grid">
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Ipca Laboratories Ltd</div>
                 </div>
-            </div>
-            <!-- Review Grid (Masonry-like) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Review Card 1 -->
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
-                    <div class="flex gap-1 text-yellow-400 mb-6">
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8 flex-grow">
-                        "Labhouse provides exceptional accuracy and reliable turnaround times. Their documentation is
-                        always impeccable and meets all regulatory standards for our ISO certification audits."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
-                            <img class="w-full h-full object-cover"
-                                data-alt="Professional headshot of a female doctor in a lab coat"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6XnTqD2tzJC3c5QzGDATQ0bhOMBCeJJJGiu1VECig0c7s-pwaOXGoMfnHc9rQkzvrM0uBOH5KmrMo2Gm8hRi1S0ig-Q_zDzltavhpZm2U2RhtdhE8dGinE7bz9Hz_IpMdYvPdtc0lgY_0o5SHDPpgv9QOq_SObg8nmCyIB9xOEPWBrUcR6iYH58Ih-cRg4raidJTEJaQsCIDq-BO5UpfOxVAln-K0J3oU3Vc9jVaN8EjPn9GSG1CLo4p0hND3CjhGojf2ohMD2uCv" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">Dr. Sarah Chen</h4>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Senior Researcher,
-                                Bio-Labs</p>
-                        </div>
-                    </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="oilgas">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Shiv-Vani Oil & Gas Exploration Services Ltd.</div>
                 </div>
-                <!-- Review Card 2 -->
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col lg:translate-y-8">
-                    <div class="flex gap-1 text-yellow-400 mb-6">
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8 flex-grow">
-                        "We've used Labhouse for all our equipment calibration for 5 years. Their technicians are
-                        knowledgeable and professional. The new client portal makes tracking assets effortless."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
-                            <img class="w-full h-full object-cover"
-                                data-alt="Portrait of a male facility manager in professional attire"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2Po8XJwkJC8Kq31ocy_bYeBdf110BwPvxDEY6KAzRH48E_dGAy47YFk8qMkIxG10Er2JcEbfvLx-mNwL2uJd-YBMK2GqsZ7FgNYL86fvXDBQcmivjOdkkWEqiZP5fzpokVr5_y-Fc2ACtLz4hh5o3f5sTTlPqMpF7QAngwyK6Cclz87AV2wSMKzz5BAEMPFJShe0QbtpSdoWVO_Y_v8Lhk64hE18dI07kGEWlvdRx-Zpw9nz2icVPnZGj8gG-X43-kD3JKJk1_PbH" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">Mark Thompson</h4>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Facility Manager,
-                                HealthSys</p>
-                        </div>
-                    </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Allegro Pharmachem</div>
                 </div>
-                <!-- Review Card 3 -->
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
-                    <div class="flex gap-1 text-yellow-400 mb-6">
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 0">star</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8 flex-grow">
-                        "Great service and very detailed reports. The portal makes it easy to track our assets and
-                        upcoming deadlines. Customer support is very responsive to urgent requests."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
-                            <img class="w-full h-full object-cover" data-alt="Headshot of a smiling female lab director"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvbr7paDhhJm1PXHJY11ueq5FaDArA6q60IeiTvp9PCl_QRwS7jJDu27wI6Saod6ibzsB4Kl2MR2uQ3Nbj9YiRYSwPkxQhGTZ2EC_ff_8bHcuNF_v9XFacN0WG-7bJ0PTUmhW5eCEmLoHFm8d2lC4rT5UC6x6B6Ts2_oavwQ5t5fYw6WsqWDKKTEeQq6cpzQ6EbAYdfnIXyHbwOy6sfLI-xo9q9IsfeUXQzGPxhYuX9XhEZ5ZUWIU3QXikh8HU28zcSvvyDsCvloUz" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">Elena Rodriguez</h4>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Lab Director, ChemCore</p>
-                        </div>
-                    </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Aurobindo Pharmaceutical Research Center</div>
                 </div>
-                <!-- Review Card 4 -->
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
-                    <div class="flex gap-1 text-yellow-400 mb-6">
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8 flex-grow">
-                        "Switching to Labhouse was the best decision for our R&amp;D wing. Their precision tools and
-                        transparent reporting have saved us dozens of hours in compliance paperwork."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
-                            <img class="w-full h-full object-cover"
-                                data-alt="Portrait of a female scientist in a research facility"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv-GSgD3Vm32Y1VYVrK7UPRAYSRV1Gs3xlSK1beAPYysyZNrrO128dOVbC1Ywo_0MDH2LfJBFkTVHT-Zx_ASb0o24DgCzAECIEdCWp2XgfcmFR5e-nzAqjgI2wPPWG5UCSpvx_2stQyFeQR2HupIFfK0X-ctUrHpxfa7Y3HkfpicixK8pQyNAnxUjDngVkCz5eqvS6gvoYvGPAcwqE0gS7Klz3gMdrov20P6crs1lttyotD_okx_NWtUr2utBNeDjLZqQkE3szYeBG" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">Jessica Wu</h4>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Head of R&amp;D,
-                                Innovatech</p>
-                        </div>
-                    </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Ajas component (PamGroup)</div>
                 </div>
-                <!-- Review Card 5 -->
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col lg:translate-y-8">
-                    <div class="flex gap-1 text-yellow-400 mb-6">
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8 flex-grow">
-                        "The most professional calibration service we've partnered with in 20 years. Their team
-                        understands the nuance of high-stakes pharmaceutical manufacturing."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
-                            <img class="w-full h-full object-cover"
-                                data-alt="Portrait of a male senior executive in an office"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuARNoy37P8xQJw8Qb5X0AWzqD7vvbgp9fEOoKTnquj9RVY7EEL24-3y0ATyOFTW9YYtw8KhQuKlu5E_oeG7Y1UbfHprxo_DRp8rM-wtHAStHSPNXWVKkJRupBGlyPZOZuRctHfzL6h9RpiwHlbr8if-CRrmnN4ulbW_y0IDlOZ9zz1icdA82jrXQtwVs6gvoYvGPAcwqE0gS7Klz3gMdrov20P6crs1lttyotD_okx_NWtUr2utBNeDjLZqQkE3szYeBG" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">Robert Miller</h4>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">COO, PharmaOne</p>
-                        </div>
-                    </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Calyx Chemical And Pharmaceutical Limited</div>
                 </div>
-                <!-- Review Card 6 -->
-                <div
-                    class="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col">
-                    <div class="flex gap-1 text-yellow-400 mb-6">
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star</span>
-                        <span class="material-symbols-outlined text-sm"
-                            style="font-variation-settings: 'FILL' 1">star_half</span>
-                    </div>
-                    <p class="text-slate-800 dark:text-slate-200 leading-relaxed italic mb-8 flex-grow">
-                        "Expert technicians and very thorough. The digital certificate delivery is a game changer for
-                        our documentation speed."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <div
-                            class="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold overflow-hidden">
-                            <img class="w-full h-full object-cover"
-                                data-alt="Headshot of a female engineer in her thirties"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJl_xOfRvzNCouYQ9-Z_ZmFD_wdlvBKhuOZkKcI9KymGlfcw8eft68DL5bgR72wkRF3CzNKbp4CATLwyEyNR85zkm2vhzYAO2rtCmOaNZsquI609ofVVQEqCjrmIyKZrtXhH-0n9NPKfWPHlMVBOWb3f-RLabVS2c0Qv-cFRAMjojTdI0k9E-jK12zKiGx_hwwDAz5Ifsc9DRiIhOPFzxPa2CijkBPFZrJklUwuEctS-s10bzzmxUsXg6lxN0VLDC17UnaI_fdUL8P" />
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm">Karen Smyth</h4>
-                            <p class="text-xs text-slate-500 uppercase tracking-wider mt-0.5">Quality Assurance, UniTec
-                            </p>
-                        </div>
-                    </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Creek Insulation Chemical Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Classic Stripes Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Dabur Pharmaceutical Limited</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Dales Laboratories Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Dales Remedies Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="oilgas">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Eastern Petroleum Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Fresenius Kabi Oncology Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Gaylord Pharma system Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Godrej and boyce Mfg. Co. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Hemmo Pharmaceuticals Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Indoco Remedies Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Ind-Swift Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="other">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Kanjur Naturals</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Kleanzaids contamination cont. Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="other">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">K. M. Enterprises</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Kalisma Steel Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="other">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">L’oreal India Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Lyka Labs Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Mahindra and Mahindra Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Raptakos, Brett & Co. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Makers Laboratories Limited</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Mac-Chem products (I) Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Pratibha Ind. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Rajhans Vegetable oil Refinery Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Refrigerated Distributors Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">REMI Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="other">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Saksham Technologies Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Sky lab Instruments and Engineers Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Siyaram Silk Mills Limited</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Siro Clinpharm Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Suyog Engineers Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">The Paper Product Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Africure Pharmaceuticals India Pvt. Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="pharma">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Unimed India</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Huhtamaki PPL Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">IVP Limited</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="industrial">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Fine Organic Indutries Ltd.</div>
+                </div>
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all cursor-default min-h-[100px] rounded-2xl" data-category="other">
+                    <div class="p-6 flex items-center justify-center text-center font-bold text-slate-800 dark:text-slate-200">Western Railway</div>
                 </div>
             </div>
             <!-- CTA Section -->
@@ -389,32 +314,20 @@
                     <div class="bg-primary p-1 rounded text-white">
                         <span class="material-symbols-outlined block text-sm">biotech</span>
                     </div>
-                    <span class="text-lg font-bold tracking-tight">Labhouse</span>
+                    <span class="text-lg font-bold tracking-tight">Lab House</span>
                 </div>
                 <div class="flex gap-8 text-slate-500 text-sm">
                     <a class="hover:text-primary" href="about.html">About Us</a>
-                    <a class="hover:text-primary" href="reviews.html">Reviews</a>
+                    <a class="hover:text-primary" href="reviews.html">Clients</a>
                     <a class="hover:text-primary" href="contact.html">Contact</a>
                 </div>
-                <p class="text-slate-400 text-sm">© 2024 Labhouse Precision Calibration. All rights reserved.</p>
+                <p class="text-slate-400 text-sm">© <span id="currentYear2"></span> Lab House Calibration Services. All
+                    rights reserved.</p>
+                <script>
+                    document.getElementById('currentYear2').textContent = new Date().getFullYear();
+                </script>
             </div>
         </footer>
-    </div>
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="hidden fixed inset-0 z-[100] bg-white dark:bg-slate-900 flex-col items-center justify-center space-y-8 text-2xl font-bold">
-        <button id="close-menu-btn"
-            class="absolute top-6 right-6 p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-        <a class="hover:text-primary transition-colors" href="search.html">Services</a>
-        <a class="hover:text-primary transition-colors" href="reviews.html">Reviews</a>
-        <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-        <button
-            class="quote-btn mt-8 bg-primary text-white px-10 py-4 rounded-xl text-xl shadow-lg shadow-primary/20">Get a
-            Quote</button>
     </div>
 
     <!-- Quote Modal -->

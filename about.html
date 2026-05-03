@@ -9,6 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="pill-nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -33,36 +35,88 @@
 <body
     class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
     <div class="relative flex min-h-screen flex-col overflow-x-hidden">
-        <header
-            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-40 py-4">
-            <div class="max-w-[1200px] mx-auto flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="p-2 bg-primary rounded-lg text-white">
-                        <span class="material-symbols-outlined text-2xl">biotech</span>
+            <div class="pill-nav-container">
+                <nav class="pill-nav" aria-label="Primary">
+                    <a class="pill-logo" href="index.html" aria-label="Home">
+                        <span class="material-symbols-outlined">biotech</span>
+                    </a>
+
+                    <div class="pill-nav-items desktop-only">
+                        <ul class="pill-list" role="menubar">
+                            <li role="none">
+                                <a role="menuitem" href="index.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Home</span>
+                                        <span class="pill-label-hover">Home</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="about.html" class="pill is-active">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">About Us</span>
+                                        <span class="pill-label-hover">About Us</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="search.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Services</span>
+                                        <span class="pill-label-hover">Services</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="reviews.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Reviews</span>
+                                        <span class="pill-label-hover">Reviews</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="contact.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Contact</span>
+                                        <span class="pill-label-hover">Contact</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <button role="menuitem" class="pill quote-btn">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Get Quote</span>
+                                        <span class="pill-label-hover">Get Quote</span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">Labhouse</h1>
-                </div>
-                <nav class="hidden md:flex items-center gap-10">
-                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html">Home</a>
-                    <a class="text-sm font-semibold text-primary" href="about.html">About Us</a>
-                    <a class="text-sm font-semibold hover:text-primary transition-colors"
-                        href="search.html">Services</a>
-                    <a class="text-sm font-semibold hover:text-primary transition-colors"
-                        href="reviews.html">Reviews</a>
-                    <a class="text-sm font-semibold hover:text-primary transition-colors"
-                        href="contact.html">Contact</a>
+
+                    <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                 </nav>
-                <button
-                    class="quote-btn hidden md:block bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-lg shadow-primary/20 transition-all">
-                    Get a Quote
-                </button>
-                <!-- Hamburger Menu Icon for Mobile -->
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
+
+                <div class="mobile-menu-popover mobile-only">
+                    <ul class="mobile-menu-list">
+                        <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-menu-link is-active">About Us</a></li>
+                        <li><a href="search.html" class="mobile-menu-link">Services</a></li>
+                        <li><a href="reviews.html" class="mobile-menu-link">Reviews</a></li>
+                        <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                        <li><button class="mobile-menu-link w-full text-left quote-btn">Get a Quote</button></li>
+                    </ul>
+                </div>
             </div>
-        </header>
         <main class="flex-1">
             <section class="relative h-[400px] flex items-center justify-center overflow-hidden">
                 <div class="absolute inset-0 bg-slate-900/40 z-10"></div>
@@ -80,15 +134,16 @@
                     <div>
                         <span class="text-primary font-bold uppercase tracking-widest text-sm">Our Legacy</span>
                         <h2 class="text-4xl font-bold mt-4 mb-6 leading-tight">Precision in measurement, excellence in
-                            service.</h2>
+                            service since 1999.</h2>
                         <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-6">
-                            Labhouse has been at the forefront of the calibration industry for over two decades. Our
-                            commitment to accuracy and reliability has made us a trusted partner for laboratories and
-                            industrial facilities worldwide.
+                            Lab House since inception in the year 1999 has been quite vibrant providing timely
+                            Calibration & Thermal validation services to its customers across the country.
                         </p>
                         <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
-                            We specialize in providing high-precision calibration services across multiple domains,
-                            ensuring that your equipment meets the most stringent international standards.
+                            As we are significantly inclined towards customer satisfaction our service quality & market
+                            reputation have been the reflection of the same for the years so as to satisfy the
+                            requirements of National / International protocols & the regulatory requirements of various
+                            audits like WHO, CGMP, USFDA, MHRA & ISO.
                         </p>
                         <div class="mt-10 grid grid-cols-2 gap-8">
                             <div class="flex items-center gap-4">
@@ -105,7 +160,7 @@
                                     <span class="material-symbols-outlined">groups</span>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-xl">500+</h4>
+                                    <h4 class="font-bold text-xl">50+</h4>
                                     <p class="text-sm text-slate-500">Corporate Clients</p>
                                 </div>
                             </div>
@@ -134,10 +189,10 @@
                             <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                                 <div class="md:w-1/2 md:text-right">
                                     <span
-                                        class="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">1998</span>
-                                    <h3 class="text-xl font-bold mt-2">The Beginning</h3>
-                                    <p class="text-slate-600 dark:text-slate-400 mt-2">Founded as a small specialized
-                                        lab in Seattle focusing on thermal calibration.</p>
+                                        class="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">1999</span>
+                                    <h3 class="text-xl font-bold mt-2">The Inception</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 mt-2">Founded with a vision to provide
+                                        comprehensive services in the field of measurement and thermal validation.</p>
                                 </div>
                                 <div
                                     class="size-4 bg-primary rounded-full relative z-10 hidden md:block outline outline-8 outline-white dark:outline-slate-900">
@@ -160,10 +215,10 @@
                             <div class="flex flex-col md:flex-row items-center justify-between gap-8">
                                 <div class="md:w-1/2 md:text-right">
                                     <span
-                                        class="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">2018</span>
-                                    <h3 class="text-xl font-bold mt-2">Global Expansion</h3>
-                                    <p class="text-slate-600 dark:text-slate-400 mt-2">Opened our third facility and
-                                        introduced digital-first calibration reporting.</p>
+                                        class="bg-primary text-white px-4 py-1 rounded-full text-sm font-bold">Today</span>
+                                    <h3 class="text-xl font-bold mt-2">Reach</h3>
+                                    <p class="text-slate-600 dark:text-slate-400 mt-2">Trusted by companies
+                                    </p>
                                 </div>
                                 <div
                                     class="size-4 bg-primary rounded-full relative z-10 hidden md:block outline outline-8 outline-white dark:outline-slate-900">
@@ -175,29 +230,89 @@
                 </div>
             </section>
             <section class="py-20 max-w-[1200px] mx-auto px-6">
-                <div
-                    class="bg-primary/5 rounded-3xl p-12 flex flex-col md:flex-row items-center gap-12 border border-primary/10">
-                    <div class="flex-1">
-                        <span class="text-primary font-bold">Compliance &amp; Standards</span>
-                        <h2 class="text-4xl font-bold mt-2 mb-6">ISO/IEC 17025 Certified</h2>
-                        <p class="text-slate-600 dark:text-slate-400 text-lg mb-8">
-                            Our laboratory maintains rigorous compliance with international quality standards. Every
-                            calibration certificate we issue is traceable to national standards (NIST), providing you
-                            with total confidence in your results.
-                        </p>
-                        <button
-                            class="bg-primary text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-transform">
-                            <span class="material-symbols-outlined">download</span>
-                            Download Accreditations
-                        </button>
+                <div class="bg-primary/5 rounded-3xl border border-primary/10 overflow-hidden">
+                    <div class="p-12 flex flex-col md:flex-row items-center gap-12">
+                        <div class="flex-1">
+                            <span class="text-primary font-bold">Compliance & Standards</span>
+                            <h2 class="text-4xl font-bold mt-2 mb-6">ISO/IEC 17025 Certified</h2>
+                            <p class="text-slate-600 dark:text-slate-400 text-lg mb-8">
+                                Our laboratory maintains rigorous compliance with ISO/IEC 17025:2017 standards. Evaluated
+                                and Accredited by NABL for Mechanical, Electro-technical & Thermal Disciplines, providing
+                                you with total confidence in your results.
+                            </p>
+                            <button
+                                class="bg-primary text-white px-8 py-3 rounded-lg font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-transform">
+                                <span class="material-symbols-outlined">download</span>
+                                Download Accreditations
+                            </button>
+                        </div>
+                        <div
+                            class="size-64 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center p-8 border border-slate-100 dark:border-slate-700">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQyG6uF6Yv3fM4p7H1mYQ3E6J6S5L8R4B2"
+                                alt="NABL Logo" class="w-full h-auto" />
+                        </div>
                     </div>
-                    <div
-                        class="size-64 bg-white dark:bg-slate-800 rounded-2xl shadow-xl flex items-center justify-center p-8 border border-slate-100 dark:border-slate-700">
+                </div>
+            </section>
                         <div class="text-center">
                             <span class="material-symbols-outlined text-primary text-8xl mb-4">verified_user</span>
                             <p class="font-black text-slate-800 dark:text-white uppercase tracking-tighter text-2xl">ISO
-                                Certified</p>
+                                Accredited</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-w-[1200px] mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800">
+                <div class="text-center mb-16">
+                    <span class="text-primary font-bold uppercase tracking-widest text-sm">Key Personnel</span>
+                    <h2 class="text-3xl font-bold mt-2">Our Core Team</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Team Member 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-6 text-center shadow-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="size-24 rounded-full bg-slate-100 dark:bg-slate-800 mx-auto mb-4 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-4xl">person</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 dark:text-white">Mr. Hitesh P. Mehta</h3>
+                        <p class="text-primary font-medium text-sm mt-1">Chief Executive / Tech Head</p>
+                        <p class="text-slate-500 text-xs mt-3">M.Sc.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-6 text-center shadow-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="size-24 rounded-full bg-slate-100 dark:bg-slate-800 mx-auto mb-4 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-4xl">admin_panel_settings</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 dark:text-white">Misses. Rajni</h3>
+                        <p class="text-primary font-medium text-sm mt-1">Admin Incharge</p>
+                        <p class="text-slate-500 text-xs mt-3">Diploma (Instrumentation)</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-6 text-center shadow-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="size-24 rounded-full bg-slate-100 dark:bg-slate-800 mx-auto mb-4 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-4xl">verified_user</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 dark:text-white">Miss. Sneha Salvi</h3>
+                        <p class="text-primary font-medium text-sm mt-1">Quality Manager</p>
+                        <p class="text-slate-500 text-xs mt-3">BE (Instrumentation)</p>
+                    </div>
+                    <!-- Team Member 4 -->
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 p-6 text-center shadow-lg hover:shadow-xl transition-shadow group">
+                        <div
+                            class="size-24 rounded-full bg-slate-100 dark:bg-slate-800 mx-auto mb-4 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined text-4xl">science</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-slate-900 dark:text-white">Mr. Mahesh Kulaye</h3>
+                        <p class="text-primary font-medium text-sm mt-1">Lab Incharge</p>
+                        <p class="text-slate-500 text-xs mt-3">ITI (Instrumentation)</p>
                     </div>
                 </div>
             </section>
@@ -206,11 +321,11 @@
             <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div class="col-span-1 md:col-span-1">
                     <div class="flex items-center gap-3 text-white mb-6">
-                        <span class="material-symbols-outlined">biotech</span>
-                        <h2 class="text-xl font-bold">Labhouse</h2>
+                        <span class="material-symbols-outlined text-3xl">biotech</span>
+                        <h2 class="text-xl font-bold">Lab House</h2>
                     </div>
-                    <p class="text-sm leading-relaxed">Providing high-precision calibration and testing solutions since
-                        1998. Committed to excellence and absolute accuracy.</p>
+                    <p class="text-sm leading-relaxed">Providing high-precision Calibration, Thermal Validation and HVAC
+                        Validation services since 1999.</p>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6">Quick Links</h4>
@@ -224,17 +339,18 @@
                 <div>
                     <h4 class="text-white font-bold mb-6">Contact Info</h4>
                     <ul class="space-y-4 text-sm">
-                        <li class="flex items-center gap-2">
+                        <li class="flex items-start gap-2">
                             <span class="material-symbols-outlined text-sm text-primary">location_on</span>
-                            123 Precision Way, Science Park, WA 98101
+                            <span>207, Tirupati trade centre,<br>Navghar Road, Vasai (E),<br>Dist: Thane – 401 210,
+                                Maharashtra</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm text-primary">mail</span>
-                            info@labhouse-calibration.com
+                            contact@labhouse.net
                         </li>
                         <li class="flex items-center gap-2">
                             <span class="material-symbols-outlined text-sm text-primary">call</span>
-                            +1 (800) LAB-PRECISION
+                            09326050186 / 09225211221
                         </li>
                     </ul>
                 </div>
@@ -252,25 +368,13 @@
                 </div>
             </div>
             <div class="max-w-[1200px] mx-auto mt-16 pt-8 border-t border-slate-800 text-center text-xs">
-                © 2024 Labhouse Calibration Services. All rights reserved. Professional precision guaranteed.
+                © <span id="currentYear"></span> Lab House Calibration Services. All rights reserved.
+                <script>
+                    document.getElementById('currentYear').textContent = new Date().getFullYear();
+                </script>
             </div>
         </footer>
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="hidden fixed inset-0 z-[100] bg-white dark:bg-slate-900 flex-col items-center justify-center space-y-8 text-2xl font-bold">
-            <button id="close-menu-btn"
-                class="absolute top-6 right-6 p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-4xl">close</span>
-            </button>
-            <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-            <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-            <a class="hover:text-primary transition-colors" href="search.html">Services</a>
-            <a class="hover:text-primary transition-colors" href="reviews.html">Reviews</a>
-            <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-            <button
-                class="quote-btn mt-8 bg-primary text-white px-10 py-4 rounded-xl text-xl shadow-lg shadow-primary/20">Get
-                a Quote</button>
-        </div>
+
 
         <!-- Quote Modal -->
         <div id="quote-modal"

@@ -11,6 +11,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="pill-nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -39,64 +41,102 @@
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
     <div class="relative flex h-auto min-screen w-full flex-col group/design-root overflow-x-hidden">
         <div class="layout-container flex h-full grow flex-col">
-            <header
-                class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
-                <div class="flex items-center gap-10">
-                    <div class="flex items-center gap-3 text-primary">
-                        <span class="material-symbols-outlined text-4xl font-bold">biotech</span>
-                        <h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold leading-tight tracking-tight">
-                            Labhouse</h2>
+            <div class="pill-nav-container">
+                <nav class="pill-nav" aria-label="Primary">
+                    <a class="pill-logo" href="index.html" aria-label="Home">
+                        <span class="material-symbols-outlined">biotech</span>
+                    </a>
+
+                    <div class="pill-nav-items desktop-only">
+                        <ul class="pill-list" role="menubar">
+                            <li role="none">
+                                <a role="menuitem" href="index.html" class="pill is-active">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Home</span>
+                                        <span class="pill-label-hover">Home</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="about.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">About Us</span>
+                                        <span class="pill-label-hover">About Us</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="search.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Services</span>
+                                        <span class="pill-label-hover">Services</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="reviews.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Reviews</span>
+                                        <span class="pill-label-hover">Reviews</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="contact.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Contact</span>
+                                        <span class="pill-label-hover">Contact</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <button role="menuitem" class="pill quote-btn">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Get Quote</span>
+                                        <span class="pill-label-hover">Get Quote</span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <nav class="hidden lg:flex items-center gap-8">
-                        <a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
-                            href="index.html">Home</a>
-                        <a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
-                            href="about.html">About Us</a>
-                        <a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
-                            href="search.html">Services</a>
-                        <a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
-                            href="reviews.html">Reviews</a>
-                        <a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors"
-                            href="contact.html">Contact</a>
-                    </nav>
-                </div>
-                <div class="flex flex-1 justify-end gap-6 items-center">
-                    <label class="hidden md:flex flex-col min-w-40 h-10 max-w-64">
-                        <div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-slate-100 dark:bg-slate-800">
-                            <div class="text-slate-500 flex items-center justify-center pl-4">
-                                <span class="material-symbols-outlined text-xl">search</span>
-                            </div>
-                            <input
-                                class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 h-full placeholder:text-slate-500 px-4 pl-2 text-sm font-normal"
-                                placeholder="Search services..." value="" />
-                        </div>
-                    </label>
-                    <button
-                        class="quote-btn hidden md:flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold transition-all hover:bg-primary/90 shadow-lg shadow-primary/20">
-                        <span>Get a Quote</span>
+
+                    <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
                     </button>
-                    <!-- Hamburger Menu Icon for Mobile -->
-                    <button id="mobile-menu-btn"
-                        class="lg:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                        <span class="material-symbols-outlined text-3xl">menu</span>
-                    </button>
+                </nav>
+
+                <div class="mobile-menu-popover mobile-only">
+                    <ul class="mobile-menu-list">
+                        <li><a href="index.html" class="mobile-menu-link is-active">Home</a></li>
+                        <li><a href="about.html" class="mobile-menu-link">About Us</a></li>
+                        <li><a href="search.html" class="mobile-menu-link">Services</a></li>
+                        <li><a href="reviews.html" class="mobile-menu-link">Reviews</a></li>
+                        <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                        <li><button class="mobile-menu-link w-full text-left quote-btn">Get a Quote</button></li>
+                    </ul>
                 </div>
-            </header>
+            </div>
             <main class="flex flex-col">
                 <div class="px-6 md:px-20 py-12 md:py-20 max-w-[1440px] mx-auto w-full">
                     <div class="flex flex-col gap-10 lg:flex-row items-center">
                         <div class="flex flex-col gap-8 flex-1">
                             <div class="flex flex-col gap-4">
-                                <span class="text-primary font-bold tracking-widest uppercase text-xs">ISO/IEC 17025
-                                    Accredited</span>
+                                <span class="text-primary font-bold tracking-widest uppercase text-xs">ISO/IEC
+                                    17025:2017 Accredited By NABL</span>
                                 <h1
                                     class="text-slate-900 dark:text-white text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
-                                    Precision Calibration <br /><span class="text-primary">You Can Trust</span>
+                                    Precision Calibration <br /><span class="text-primary">& Validation</span>
                                 </h1>
                                 <p
                                     class="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed max-w-[600px]">
-                                    Labhouse provides industry-leading calibration services for laboratory equipment,
-                                    ensuring total accuracy and regulatory compliance for your most critical operations.
+                                    Expert services for Pharmaceutical, Engineering, and Chemical industries since 1999.
                                 </p>
                             </div>
                             <div class="flex flex-wrap gap-4">
@@ -114,65 +154,44 @@
                             <div class="aspect-square md:aspect-video lg:aspect-square w-full bg-slate-200 dark:bg-slate-800 rounded-2xl overflow-hidden shadow-2xl"
                                 style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBaA_5Yt80EZ8B31fNeto2t9YYAMlzMWV5m5t3QgEUMiCJKv3LUuLHxv12M7DeguSPBMdijgV80cmZ-fHcMmBqISWYG_exmJKymthN1cXmYf5o77Y3ZNlRvreZfM4yptYH_fU3DZLOhAyLR9Y05_LQiyECC4XsZj_p0wpnGA6zIfYY9vp0FhG1bX-D1a2KDY6XQ83Z9Gdftimx1j9bGaoulLV5yTMJ56Wlm1MCFOuPrG0xF4KeAyG0UyCGempy6Eo-pyzoMdThcFtAz"); background-size: cover; background-position: center;'>
                             </div>
-                            <div
-                                class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-xl shadow-xl border border-slate-100 dark:border-slate-800 hidden md:block">
-                                <div class="flex items-center gap-4">
-                                    <div class="bg-primary/10 p-3 rounded-full">
-                                        <span class="material-symbols-outlined text-primary text-3xl">verified</span>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm text-slate-500 dark:text-slate-400 font-medium">Certified
-                                            Accuracy</p>
-                                        <p class="text-xl font-bold text-slate-900 dark:text-white">99.9% Compliance</p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
                 <section class="bg-white dark:bg-slate-900/50 py-20 border-y border-slate-100 dark:border-slate-800">
                     <div class="px-6 md:px-20 max-w-[1440px] mx-auto w-full">
                         <div class="flex flex-col gap-4 mb-16 text-center">
-                            <h2 class="text-slate-900 dark:text-white text-4xl font-bold leading-tight">Why Choose
-                                Labhouse?</h2>
-                            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">With over 25 years
-                                of technical expertise, we offer more than just calibration—we offer peace of mind.</p>
+                            <h2 class="text-slate-900 dark:text-white text-4xl font-bold leading-tight">Why Choose Us?</h2>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div
-                                class="flex flex-col gap-5 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-background-dark hover:shadow-xl transition-shadow group">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <span class="material-symbols-outlined text-3xl">workspace_premium</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">ISO Certified</h3>
-                                    <p class="text-slate-600 dark:text-slate-400">Our labs are fully compliant with
-                                        ISO/IEC 17025 standards, ensuring international traceability.</p>
+                            <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+                                <div class="flex flex-col gap-5">
+                                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <span class="material-symbols-outlined text-3xl">fact_check</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold">Quality Review</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                class="flex flex-col gap-5 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-background-dark hover:shadow-xl transition-shadow group">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <span class="material-symbols-outlined text-3xl">speed</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Fast Turnaround</h3>
-                                    <p class="text-slate-600 dark:text-slate-400">Minimize instrument downtime with our
-                                        optimized 3-5 day calibration cycles and express options.</p>
+                            <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+                                <div class="flex flex-col gap-5">
+                                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold">NABL Accredited</h3>
+                                    </div>
                                 </div>
                             </div>
-                            <div
-                                class="flex flex-col gap-5 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 bg-background-light dark:bg-background-dark hover:shadow-xl transition-shadow group">
-                                <div
-                                    class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <span class="material-symbols-outlined text-3xl">engineering</span>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-bold mb-2">Expert Technicians</h3>
-                                    <p class="text-slate-600 dark:text-slate-400">Our senior metrologists bring decades
-                                        of experience across diverse scientific disciplines.</p>
+                            <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+                                <div class="flex flex-col gap-5">
+                                    <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                        <span class="material-symbols-outlined text-3xl">school</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold">Technical Expertise</h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -184,10 +203,8 @@
                         <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32"></div>
                         <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/10 rounded-full -ml-24 -mb-24"></div>
                         <div class="relative z-10 flex flex-col items-center gap-8">
-                            <h2 class="text-white text-4xl md:text-5xl font-bold leading-tight max-w-2xl">Ready to
-                                ensure your lab's precision?</h2>
-                            <p class="text-white/80 text-xl max-w-xl">Get a custom quote for your specific equipment
-                                list within 24 hours.</p>
+                            <h2 class="text-white text-4xl md:text-5xl font-bold leading-tight max-w-2xl">Precision Guaranteed.</h2>
+                            <p class="text-white/80 text-xl max-w-xl">Get your custom quote today.</p>
                             <div class="flex flex-wrap justify-center gap-4 mt-4">
                                 <button
                                     class="quote-btn bg-white text-primary px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-50 shadow-2xl transition-all hover:scale-105">Get
@@ -205,10 +222,10 @@
                     <div class="flex flex-col gap-6">
                         <div class="flex items-center gap-3 text-white">
                             <span class="material-symbols-outlined text-3xl">biotech</span>
-                            <span class="text-2xl font-bold">Labhouse</span>
+                            <span class="text-2xl font-bold">Lab House</span>
                         </div>
-                        <p class="text-sm leading-relaxed">Pioneering precision in laboratory metrology since 1998.
-                            ISO/IEC 17025 accredited facility.</p>
+                        <p class="text-sm leading-relaxed">Pioneering precision in Calibration, Thermal Validation &
+                            HVAC Validation since 1999.</p>
                         <div class="flex gap-4">
                             <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors text-white"
                                 href="#">
@@ -238,22 +255,26 @@
                         <div class="flex flex-col gap-3">
                             <div class="flex items-start gap-3">
                                 <span class="material-symbols-outlined text-primary">location_on</span>
-                                <p class="text-sm">123 Precision Way, Science Park<br />Cambridge, MA 02142</p>
+                                <p class="text-sm">207, Tirupati trade centre, Navghar Road<br />Vasai (E), Dist: Thane
+                                    – 401 210, Maharashtra</p>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-primary">call</span>
-                                <p class="text-sm">+1 (555) 800-LABS</p>
+                                <p class="text-sm">09326050186 / 09225211221</p>
                             </div>
                             <div class="flex items-center gap-3">
                                 <span class="material-symbols-outlined text-primary">mail</span>
-                                <p class="text-sm">support@labhouse.com</p>
+                                <p class="text-sm">contact@labhouse.net</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div
                     class="max-w-[1440px] mx-auto mt-16 pt-8 border-t border-slate-800 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p>© 2024 Labhouse Calibration Services. All rights reserved.</p>
+                    <p>© <span id="currentYear"></span> Lab House. All rights reserved.</p>
+                    <script>
+                        document.getElementById('currentYear').textContent = new Date().getFullYear();
+                    </script>
                     <div class="flex gap-6">
                         <a class="hover:text-white" href="#">Privacy Policy</a>
                         <a class="hover:text-white" href="#">Terms of Service</a>
@@ -264,22 +285,7 @@
         </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="hidden fixed inset-0 z-[100] bg-white dark:bg-slate-900 flex-col items-center justify-center space-y-8 text-2xl font-bold">
-        <button id="close-menu-btn"
-            class="absolute top-6 right-6 p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-        <a class="hover:text-primary transition-colors" href="search.html">Services</a>
-        <a class="hover:text-primary transition-colors" href="reviews.html">Reviews</a>
-        <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-        <button
-            class="quote-btn mt-8 bg-primary text-white px-10 py-4 rounded-xl text-xl shadow-lg shadow-primary/20">Get a
-            Quote</button>
-    </div>
+
 
     <!-- Quote Modal -->
     <div id="quote-modal"

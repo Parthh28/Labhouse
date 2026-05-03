@@ -5,15 +5,15 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Search Results - Labhouse</title>
+    <title>Scope of Services - Lab House</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="pill-nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -41,61 +41,100 @@
 
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
     <!-- Top Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-primary/10 px-6 lg:px-20 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
-            <div class="flex items-center gap-8">
-                <div class="flex items-center gap-2 text-primary">
-                    <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+            <div class="pill-nav-container">
+                <nav class="pill-nav" aria-label="Primary">
+                    <a class="pill-logo" href="index.html" aria-label="Home">
                         <span class="material-symbols-outlined">biotech</span>
+                    </a>
+
+                    <div class="pill-nav-items desktop-only">
+                        <ul class="pill-list" role="menubar">
+                            <li role="none">
+                                <a role="menuitem" href="index.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Home</span>
+                                        <span class="pill-label-hover">Home</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="about.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">About Us</span>
+                                        <span class="pill-label-hover">About Us</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="search.html" class="pill is-active">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Services</span>
+                                        <span class="pill-label-hover">Services</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="reviews.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Reviews</span>
+                                        <span class="pill-label-hover">Reviews</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <a role="menuitem" href="contact.html" class="pill">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Contact</span>
+                                        <span class="pill-label-hover">Contact</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li role="none">
+                                <button role="menuitem" class="pill quote-btn">
+                                    <span class="hover-circle"></span>
+                                    <span class="label-stack">
+                                        <span class="pill-label">Get Quote</span>
+                                        <span class="pill-label-hover">Get Quote</span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
-                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Labhouse</h2>
-                </div>
-                <div class="hidden md:flex items-center gap-6">
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="about.html">About Us</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="reviews.html">Reviews</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact</a>
+
+                    <button class="mobile-menu-button mobile-only" aria-label="Toggle menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </nav>
+
+                <div class="mobile-menu-popover mobile-only">
+                    <ul class="mobile-menu-list">
+                        <li><a href="index.html" class="mobile-menu-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-menu-link">About Us</a></li>
+                        <li><a href="search.html" class="mobile-menu-link is-active">Services</a></li>
+                        <li><a href="reviews.html" class="mobile-menu-link">Reviews</a></li>
+                        <li><a href="contact.html" class="mobile-menu-link">Contact</a></li>
+                        <li><button class="mobile-menu-link w-full text-left quote-btn">Get a Quote</button></li>
+                    </ul>
                 </div>
             </div>
-            <div class="flex flex-1 max-w-md mx-4">
-                <div class="relative w-full group">
-                    <span
-                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary">search</span>
-                    <input
-                        class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary transition-all outline-none"
-                        placeholder="Search services, tools, or docs..." type="text" value="Calibration" />
-                </div>
-            </div>
-            <div class="flex items-center gap-4">
-                <button
-                    class="hidden sm:flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-primary/90 transition-all">
-                    <span class="material-symbols-outlined text-sm">account_circle</span>
-                    Client Portal
-                </button>
-                <div
-                    class="size-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/30 overflow-hidden hidden md:flex">
-                    <img alt="Profile" class="w-full h-full object-cover" data-alt="User profile avatar placeholder"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY3GO84sIEBxalax9T-kPahEPLfIUETUy6dW_YIgy5JLdMfkgE5xx14QmKbUOCo9j_I-v6VAXoF8wRWzrtHag8aj5WZm_Kj2Wn27ODMNmTHeCXv7_VcQTnCCVL0I-E7BxlvWQv-rHx8EyHo-c76miHO4QU5-vN0pFk1Ot061myVAOAG2vH4Jjeh8bvCtrsV-sM-VGbIy44jdtoThzdwo9Rq9kejhGzAcTNTsFlKhBgp8xou9IpJ6nFAh7a27ATxSb5i4NQpd5LjQ69" />
-                </div>
-                <button id="mobile-menu-btn"
-                    class="md:hidden p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
-            </div>
-        </div>
-    </header>
     <main class="max-w-7xl mx-auto px-6 lg:px-20 py-8">
         <!-- Breadcrumbs & Title -->
         <div class="mb-8">
             <nav class="flex items-center gap-2 text-sm text-slate-500 mb-4">
                 <a class="hover:text-primary" href="index.html">Home</a>
                 <span class="material-symbols-outlined text-xs">chevron_right</span>
-                <span class="text-slate-900 dark:text-slate-100 font-medium">Search Results</span>
+                <span class="text-slate-900 dark:text-slate-100 font-medium">Services</span>
             </nav>
             <h1 class="text-4xl font-black tracking-tight mb-2 text-slate-900 dark:text-white">
-                Results for "<span class="text-primary">Calibration</span>"
+                Our <span class="text-primary">Scope of Services</span>
             </h1>
-            <p class="text-slate-500 dark:text-slate-400">Found 128 matching results across our database.</p>
+            <p class="text-slate-500 dark:text-slate-400">Comprehensive calibration and validation solutions.</p>
         </div>
         <div class="flex flex-col lg:flex-row gap-8">
             <!-- Sidebar Filters -->
@@ -103,66 +142,45 @@
                 <div class="sticky top-24 space-y-8">
                     <div>
                         <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Categories</h3>
-                        <div class="space-y-1">
-                            <button
-                                class="w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white font-medium">
+                        <div class="space-y-1" id="service-filters">
+                            <button data-filter="all"
+                                class="service-filter-btn w-full flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white font-bold transition-all shadow-sm">
                                 <span class="material-symbols-outlined text-sm">grid_view</span>
-                                <span class="text-sm">All Results</span>
-                                <span class="ml-auto text-xs bg-white/20 px-2 py-0.5 rounded-full">128</span>
+                                <span class="text-sm">All Services</span>
                             </button>
-                            <button
-                                class="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
-                                <span class="material-symbols-outlined text-sm">medical_services</span>
-                                <span class="text-sm">Services</span>
-                                <span
-                                    class="ml-auto text-xs bg-slate-200 dark:bg-slate-700 px-2 py-0.5 rounded-full">42</span>
+                            <button data-filter="thermal"
+                                class="service-filter-btn w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
+                                <span class="material-symbols-outlined text-sm">thermostat</span>
+                                <span class="text-sm">Thermal Validation</span>
                             </button>
-                            <button
-                                class="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
+                            <button data-filter="hvac"
+                                class="service-filter-btn w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
+                                <span class="material-symbols-outlined text-sm">air</span>
+                                <span class="text-sm">HVAC Validation</span>
+                            </button>
+                            <button data-filter="calibration"
+                                class="service-filter-btn w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
                                 <span class="material-symbols-outlined text-sm">precision_manufacturing</span>
-                                <span class="text-sm">Equipment</span>
-                                <span
-                                    class="ml-auto text-xs bg-slate-200 dark:bg-slate-700 px-2 py-0.5 rounded-full">56</span>
-                            </button>
-                            <button
-                                class="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-primary/10 text-slate-700 dark:text-slate-300 transition-colors">
-                                <span class="material-symbols-outlined text-sm">description</span>
-                                <span class="text-sm">Documents</span>
-                                <span
-                                    class="ml-auto text-xs bg-slate-200 dark:bg-slate-700 px-2 py-0.5 rounded-full">30</span>
+                                <span class="text-sm">Calibration</span>
                             </button>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Instrument Type</h3>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Accreditation</h3>
                         <div class="space-y-2">
                             <label class="flex items-center gap-3 cursor-pointer group">
                                 <input checked="" class="rounded border-slate-300 text-primary focus:ring-primary"
                                     type="checkbox" />
                                 <span
-                                    class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Pressure
-                                    Instruments</span>
+                                    class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">ISO/IEC
+                                    17025:2017</span>
                             </label>
                             <label class="flex items-center gap-3 cursor-pointer group">
-                                <input class="rounded border-slate-300 text-primary focus:ring-primary"
+                                <input checked="" class="rounded border-slate-300 text-primary focus:ring-primary"
                                     type="checkbox" />
                                 <span
-                                    class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Temperature
-                                    Sensors</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input class="rounded border-slate-300 text-primary focus:ring-primary"
-                                    type="checkbox" />
-                                <span
-                                    class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Flow
-                                    Meters</span>
-                            </label>
-                            <label class="flex items-center gap-3 cursor-pointer group">
-                                <input class="rounded border-slate-300 text-primary focus:ring-primary"
-                                    type="checkbox" />
-                                <span
-                                    class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Scales
-                                    &amp; Weights</span>
+                                    class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">NABL
+                                    Accredited</span>
                             </label>
                         </div>
                     </div>
@@ -179,206 +197,154 @@
             </aside>
             <!-- Search Results Content -->
             <div class="flex-1 space-y-12">
-                <!-- Section: Services -->
-                <section>
+                <section class="service-section" data-category="thermal">
                     <div
                         class="flex items-center justify-between mb-6 border-b border-slate-200 dark:border-slate-800 pb-2">
                         <h2 class="text-xl font-bold flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">engineering</span>
-                            Services
+                            <span class="material-symbols-outlined text-primary">thermostat</span>
+                            Thermal Validation Services
                         </h2>
-                        <a class="text-primary text-sm font-medium hover:underline" href="#">View all services</a>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div
-                            class="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all border-l-4 border-l-primary">
-                            <h3 class="font-bold text-lg mb-1">Standard Calibration Service</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Comprehensive
-                                testing and adjustment for pressure and temperature instruments in accordance with ISO
-                                standards.</p>
-                            <div class="flex items-center gap-4">
-                                <span
-                                    class="inline-flex items-center px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold uppercase tracking-wider">ISO
-                                    17025</span>
-                                <span class="text-primary text-sm font-bold ml-auto">$149.00</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Area / Ware House Mapping</h3>
                             </div>
                         </div>
-                        <div
-                            class="p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all border-l-4 border-l-primary">
-                            <h3 class="font-bold text-lg mb-1">On-Site Calibration Fleet</h3>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Mobile lab
-                                services that bring our calibration equipment directly to your manufacturing facility
-                                for minimal downtime.</p>
-                            <div class="flex items-center gap-4">
-                                <span
-                                    class="inline-flex items-center px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-[10px] font-bold uppercase tracking-wider">On-Site</span>
-                                <span class="text-primary text-sm font-bold ml-auto">Request Quote</span>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Walk-in Stability Chamber</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Incubator / Refrigerator</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Cold Chamber / Cold Room</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Autoclave</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Oven / Furnace</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Dry Heat Sterilizer</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Tunnel</h3>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- Section: Equipment -->
-                <section>
+                <section class="service-section pt-8" data-category="hvac">
                     <div
                         class="flex items-center justify-between mb-6 border-b border-slate-200 dark:border-slate-800 pb-2">
                         <h2 class="text-xl font-bold flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">analytics</span>
-                            Equipment
+                            <span class="material-symbols-outlined text-primary">air</span>
+                            HVAC Validation Services
                         </h2>
-                        <a class="text-primary text-sm font-medium hover:underline" href="#">Browse inventory</a>
                     </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                        <div
-                            class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group">
-                            <div
-                                class="aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
-                                <img alt="Pressure Gauge"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    data-alt="High precision pressure gauge for industrial use"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYPRtp4F6-3K9Xqg71XIlxfpT4BDNfI7zuhr6u4HX9pfmo3f91YPNjIrBDkcStF6VV0GClMmAFIrDD9KfB19uitXHutFGq3Dd1ChcnCzQPOZ0KoMv55vqhGZHkOjAIegVm6kCIlhc5hto3-82a5jYF60gvnhOKXfKsluPxKvXKwW1DaHd4aAa6HKHyqdJ2k_Isp5neI7xqDC0JRV-8ZjE4JSwytsygREy1p_M8rm8h5IHvc2VRhKNzAnOykV60WTf__dohXZEe6fMZ" />
-                            </div>
-                            <div class="p-4">
-                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Brand:
-                                    PreciseLab</span>
-                                <h3
-                                    class="font-bold text-base mb-2 group-hover:text-primary transition-colors line-clamp-1">
-                                    Digital Calibration Pressure Gauge</h3>
-                                <div class="flex items-center justify-between mt-4">
-                                    <span class="text-lg font-black">$2,450</span>
-                                    <button
-                                        class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-sm">shopping_cart</span>
-                                    </button>
-                                </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Airborne Particle Count</h3>
                             </div>
                         </div>
-                        <div
-                            class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group">
-                            <div
-                                class="aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
-                                <img alt="Digital Thermometer"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    data-alt="Compact digital thermometer for lab testing"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3jP6k7cLF7UJqatHe30HzH2BDbjbh2wMun91q0oYk6E4HhZdCc7mVxJdKScmxWYlru-BNWe70PdHqF8EIdr8szcp4XuOZk9sOgV_8iCLRdrBABgF3DeJ3xzqutafdhjDQPERUURTjIm016mwdzLqPI7WerFn-yMCfXzLYxlxCPKBpdFRamk6vk9OltuRnCV7EHhgfQ6lbZA9Ga6gNXDk9ow07wSeBFMhoowcThrqJvcgnEzfnemhMEVJ6xfRNqPq0SaLk9EBP0byv" />
-                            </div>
-                            <div class="p-4">
-                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Brand:
-                                    ThermoFix</span>
-                                <h3
-                                    class="font-bold text-base mb-2 group-hover:text-primary transition-colors line-clamp-1">
-                                    Reference Temperature Probe</h3>
-                                <div class="flex items-center justify-between mt-4">
-                                    <span class="text-lg font-black">$890</span>
-                                    <button
-                                        class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-sm">shopping_cart</span>
-                                    </button>
-                                </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Filter Integrity Test</h3>
                             </div>
                         </div>
-                        <div
-                            class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 group">
-                            <div
-                                class="aspect-video bg-slate-100 dark:bg-slate-800 flex items-center justify-center overflow-hidden">
-                                <img alt="Flow Meter"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    data-alt="Industrial flow meter component for calibration"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAefOeuC4m3ummQ5A9jXECwqSFcP3jTKILGaR-nk9HTnORR0Gjzaa7PUDjPFRoqUMDLWBA_wmT0V10aq9pKE1rkdjCZUtOD7ntYetFuQyzgCXPGJI5hxTowltseG50uzdQWSmt00YkxG-fsHuMXgsEXXpjVsHvsjgcilc-TYaqzoDoj1VnXPZBZt76CrcX5adfurhNYYYRSTQ2Y9Q4eDf7LWs1lRHzUh7c1_u5mJdZyaNx5d5_Q4XioXzvaRydBRiq_rlzqx7_Nk_Wc" />
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Air Velocity Test</h3>
                             </div>
-                            <div class="p-4">
-                                <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Brand:
-                                    FlowMaster</span>
-                                <h3
-                                    class="font-bold text-base mb-2 group-hover:text-primary transition-colors line-clamp-1">
-                                    Variable Area Flow Meter</h3>
-                                <div class="flex items-center justify-between mt-4">
-                                    <span class="text-lg font-black">$1,120</span>
-                                    <button
-                                        class="size-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
-                                        <span class="material-symbols-outlined text-sm">shopping_cart</span>
-                                    </button>
-                                </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Air Flow Pattern</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Air Balancing</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">LAF/RLAF</h3>
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- Section: Documentation -->
-                <section>
+                <section class="service-section pt-8 mb-16" data-category="calibration">
                     <div
                         class="flex items-center justify-between mb-6 border-b border-slate-200 dark:border-slate-800 pb-2">
                         <h2 class="text-xl font-bold flex items-center gap-2">
-                            <span class="material-symbols-outlined text-primary">folder_open</span>
-                            Documentation
+                            <span class="material-symbols-outlined text-primary">precision_manufacturing</span>
+                            Calibration Services
                         </h2>
-                        <a class="text-primary text-sm font-medium hover:underline" href="#">Access library</a>
                     </div>
-                    <div class="space-y-3">
-                        <div
-                            class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors cursor-pointer group">
-                            <div
-                                class="size-12 rounded bg-red-50 text-red-600 flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined">picture_as_pdf</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Pressure & Vacuum</h3>
                             </div>
-                            <div class="flex-1 min-w-0">
-                                <h4
-                                    class="font-bold text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">
-                                    Calibration Certificate - Template 2024</h4>
-                                <p class="text-xs text-slate-500">PDF Document • 2.4 MB • Updated 2 days ago</p>
-                            </div>
-                            <button
-                                class="material-symbols-outlined text-slate-400 hover:text-primary">download</button>
                         </div>
-                        <div
-                            class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors cursor-pointer group">
-                            <div
-                                class="size-12 rounded bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined">description</span>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Temperature</h3>
                             </div>
-                            <div class="flex-1 min-w-0">
-                                <h4
-                                    class="font-bold text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">
-                                    Standard Operating Procedure: Pressure Gauges</h4>
-                                <p class="text-xs text-slate-500">DOCX Document • 1.1 MB • Updated 1 month ago</p>
-                            </div>
-                            <button
-                                class="material-symbols-outlined text-slate-400 hover:text-primary">download</button>
                         </div>
-                        <div
-                            class="flex items-center gap-4 p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 hover:border-primary transition-colors cursor-pointer group">
-                            <div
-                                class="size-12 rounded bg-green-50 text-green-600 flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined">table_chart</span>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Relative Humidity</h3>
                             </div>
-                            <div class="flex-1 min-w-0">
-                                <h4
-                                    class="font-bold text-slate-900 dark:text-white truncate group-hover:text-primary transition-colors">
-                                    Uncertainty Budget Calculator</h4>
-                                <p class="text-xs text-slate-500">XLSX Document • 4.5 MB • Updated 3 months ago</p>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Electro Technical</h3>
                             </div>
-                            <button
-                                class="material-symbols-outlined text-slate-400 hover:text-primary">download</button>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Dimensions</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Electrical</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">pH / Conductivity</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Weights / Weighing Scale</h3>
+                            </div>
+                        </div>
+                        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all rounded-xl border-l-4 border-l-primary overflow-hidden">
+                            <div class="p-5">
+                                <h3 class="font-bold text-lg mb-1">Time & RPM</h3>
+                            </div>
                         </div>
                     </div>
                 </section>
-                <!-- Pagination -->
-                <nav class="flex items-center justify-center gap-2 py-8">
-                    <button
-                        class="size-10 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors disabled:opacity-50">
-                        <span class="material-symbols-outlined">chevron_left</span>
-                    </button>
-                    <button class="size-10 rounded bg-primary text-white font-bold">1</button>
-                    <button
-                        class="size-10 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium">2</button>
-                    <button
-                        class="size-10 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium">3</button>
-                    <span class="px-2">...</span>
-                    <button
-                        class="size-10 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-medium">13</button>
-                    <button
-                        class="size-10 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </button>
-                </nav>
             </div>
         </div>
     </main>
@@ -387,11 +353,11 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-20 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div class="col-span-1 md:col-span-1">
                 <div class="flex items-center gap-2 text-primary mb-6">
-                    <span class="material-symbols-outlined">biotech</span>
-                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Labhouse</h2>
+                    <span class="material-symbols-outlined text-3xl">biotech</span>
+                    <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Lab House</h2>
                 </div>
-                <p class="text-sm text-slate-500 leading-relaxed">Precision calibration services and high-end laboratory
-                    equipment for medical, industrial, and pharmaceutical sectors.</p>
+                <p class="text-sm text-slate-500 leading-relaxed">Precision calibration services and high-end thermal
+                    and HVAC validation solutions for the pharmaceutical and industrial sectors since 1999.</p>
             </div>
             <div>
                 <h4 class="font-bold mb-4">Solutions</h4>
@@ -423,28 +389,14 @@
                 </div>
             </div>
         </div>
-        <div
-            class="max-w-7xl mx-auto px-6 lg:px-20 border-t border-slate-100 dark:border-slate-800 mt-12 pt-8 text-center md:text-left">
-            <p class="text-xs text-slate-400">© 2024 Labhouse Precision Calibration. All rights reserved. ISO 17025
-                Accredited Laboratory.</p>
+        <p class="text-xs text-slate-400">© <span id="currentYear2"></span> Lab House Precision Calibration. All rights
+            reserved. ISO 17025 Accredited Laboratory NABL.</p>
+        <script>
+            document.getElementById('currentYear2').textContent = new Date().getFullYear();
+        </script>
         </div>
     </footer>
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="hidden fixed inset-0 z-[100] bg-white dark:bg-slate-900 flex-col items-center justify-center space-y-8 text-2xl font-bold">
-        <button id="close-menu-btn"
-            class="absolute top-6 right-6 p-2 text-slate-700 dark:text-slate-300 hover:text-primary transition-colors">
-            <span class="material-symbols-outlined text-4xl">close</span>
-        </button>
-        <a class="hover:text-primary transition-colors" href="index.html">Home</a>
-        <a class="hover:text-primary transition-colors" href="about.html">About Us</a>
-        <a class="hover:text-primary transition-colors" href="search.html">Services</a>
-        <a class="hover:text-primary transition-colors" href="reviews.html">Reviews</a>
-        <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-        <button
-            class="quote-btn mt-8 bg-primary text-white px-10 py-4 rounded-xl text-xl shadow-lg shadow-primary/20">Get
-            a Quote</button>
-    </div>
+
 
     <!-- Quote Modal -->
     <div id="quote-modal"
